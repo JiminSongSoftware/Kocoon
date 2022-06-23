@@ -13,7 +13,8 @@ A Web/Mobile Application Software connecting connecting college students with tu
 ## Tech Stack <br>
 ### Front End
 Mobile App: React-Native<br>
-Web App: React
+Web App: React<br>
+Styling: Bootstrap 5/CSS
 ### Back End
 Uses Django APIs to handle all backend requests and communication with the database.
 ### Database
