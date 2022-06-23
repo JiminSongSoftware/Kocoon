@@ -19,6 +19,9 @@ Uses Django APIs to handle all backend requests and communication with the datab
 ### Database
 Backed by a SQL relational database hosted on AWS
 ### Data Tracking
-_________________
 ### Cloud Services
-Uses AWS cloud services for hosting web application/mobile application. This includes server management, deployment, static content hosting, database, etc. 
+Uses AWS cloud services for hosting web application/mobile application. This includes server management, deployment, static content hosting, database, etc. Will use Linux OS for deployment servers.
+_________________
+## Current Version: v0.0
+_________________
+
