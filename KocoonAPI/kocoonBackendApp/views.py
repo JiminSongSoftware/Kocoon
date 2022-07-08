@@ -5,14 +5,19 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from rest_framework import status
-from rest_framework.response import Response
+from rest_framework import status, generics
 from rest_framework.decorators import api_view
+from rest_framework.permissions import AllowAny
+from rest_framework.views import APIView
 from rest_framework.response import Response
-from .serializers import UserSerializer, RoomSerializer
+from rest_framework.authentication import TokenAuthentication
+from .serializers import UserSerializer, RoomSerializer, RegisterSerializer
 
 def default(request):
     return HttpResponse('Index')
+class RegisterUserAPIView(generics.CreateAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = RegisterSerializer
 
 @api_view(['GET'])
 def UserDetail(request,slug):
