@@ -1,7 +1,13 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .models import UserProfileInfo, Room
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes
+from django.template.loader import render_to_string
+from .models import Meeting, UserProfileInfo, Room
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.validators import UniqueValidator
@@ -16,6 +22,10 @@ class RoomSerializer(serializers.ModelSerializer):
         model = Room
         fields = '__all__'
 
+class MeetingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Meeting
+        fields = '__all__'
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(label="Username",write_only=True)
     password = serializers.CharField(
@@ -53,7 +63,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password": "Password fields didn't match."})
         return attrs
-    def create(self, validated_data):
+    def create(self,request,validated_data):
         user = User.objects.create(
         username=validated_data['username'],
         email=validated_data['email'],
@@ -61,9 +71,24 @@ class RegisterSerializer(serializers.ModelSerializer):
         last_name=validated_data['last_name']
     )
         user.set_password(validated_data['password'])
+        # user.is_active = False
         user.save()
-        profile_user = user
-        user_profile = UserProfileInfo.objects.create(user=profile_user)
-        user_profile.user = profile_user
-        user_profile.save()
+        # current_site = get_current_site(request)
+        # mail_subject = 'Activate your account.'
+        # message = render_to_string('registration/acc_activate_email.html', {
+        #     'user': user,
+        #     'domain': current_site.domain,
+        #     'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+        #     'token': default_token_generator.make_token(user),
+        # })
+        # to_email = user.email
+        # email = EmailMessage(
+        #     mail_subject, message, to=[to_email]
+        # )
+        # email.send()
+        #Implement profile data at later feature
+        # profile_user = user
+        # user_profile = UserProfileInfo.objects.create(user=profile_user)
+        # user_profile.user = profile_user
+        # user_profile.save()
         return user
