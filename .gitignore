@@ -1,1 +1,4 @@
 kocoon-venv/*
+KocoonAPI/KocoonAPI/__pycache__
+KocoonAPI/kocoonBackendApp/__pycache__
+KocoonAPI/db.sqlite3
