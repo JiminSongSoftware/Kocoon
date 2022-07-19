@@ -1,7 +1,6 @@
 asgiref==3.5.2
-Django==3.2.13
+Django==4.0.6
 djangorestframework==3.13.1
-Pillow==9.1.1
+Pillow==9.2.0
 pytz==2022.1
 sqlparse==0.4.2
-typing_extensions==4.2.0
