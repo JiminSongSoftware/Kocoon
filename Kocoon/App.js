@@ -11,6 +11,7 @@ import {
   Dashboard,
   SecondStartScreen,
 } from './src/screens'
+import BottomTabs from './src/components/BottomTabs';
 
 const Stack = createStackNavigator()
 
@@ -33,6 +34,7 @@ export default function App() {
             component={ResetPasswordScreen}
           />
         </Stack.Navigator>
+        <BottomTabs />
       </NavigationContainer>
     </Provider>
   )
