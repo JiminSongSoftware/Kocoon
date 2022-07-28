@@ -19,7 +19,7 @@ class UserProfileInfo(models.Model):
     def __str__(self):
         return self.user.username
     def get_meetings(self):
-        return self.meetings
+        return self.meeting_set.all()
 class Room(models.Model):
     room_name = models.CharField(max_length=200,default="")
 

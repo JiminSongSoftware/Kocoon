@@ -26,6 +26,12 @@ class MeetingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meeting
         fields = '__all__'
+class UserMeetingsSerializer(serializers.ModelSerializer):
+    meeting_set = MeetingSerializer(read_only=True, many=True)
+    class Meta:
+        model = UserProfileInfo
+        fields = ['user','meeting_set']
+
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(label="Username",write_only=True)
     password = serializers.CharField(
@@ -87,8 +93,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         # )
         # email.send()
         #Implement profile data at later feature
-        # profile_user = user
-        # user_profile = UserProfileInfo.objects.create(user=profile_user)
-        # user_profile.user = profile_user
-        # user_profile.save()
+        profile_user = user
+        user_profile = UserProfileInfo.objects.create(user=profile_user)
+        user_profile.user = profile_user
+        user_profile.save()
         return user

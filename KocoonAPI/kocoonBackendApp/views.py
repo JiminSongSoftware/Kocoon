@@ -13,7 +13,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-from .serializers import UserSerializer, RoomSerializer, RegisterSerializer, LoginSerializer, MeetingSerializer
+from .serializers import *
 
 def default(request):
     return HttpResponse('Index')
@@ -21,19 +21,19 @@ def default(request):
 class MeetingsListAPIView(APIView):
     permission_classes = [IsAuthenticated]
     def get(self,request):
-        profile = get_object_or_404(UserProfileInfo,user=request.user)
-        meetings =  Meeting.objects.filter(user=current_user)
-        serializer = MeetingSerializer(meetings, many=True)
+        profile_queryset = UserProfileInfo.objects.filter(user=request.user)
+        profile = profile_queryset[0]
+        print(profile)
+        serializer = UserMeetingsSerializer(profile)
+        # print(serializer.list())
         return Response(serializer.data)
-    # def get(self,request):
-    #     print(request.user)
-    #     profile = get_object_or_404(UserProfileInfo,user=request.user)
-    #     return Response(profile.meetings)
-
-
-class RegisterUserAPIView(generics.CreateAPIView):
+class RegisterUserAPIView(APIView):
     permission_classes = [AllowAny,]
-    serializer_class = RegisterSerializer
+    def post(self,request):
+        serializer = RegisterSerializer(data=self.request.data,context={ 'request': self.request })
+        serializer.is_valid(raise_exception=True)
+        serializer.create(self.request,self.request.data)
+        return Response(status=status.HTTP_202_ACCEPTED)
 class LoginAPIView(APIView):
     permission_classes = [AllowAny,]
     def post(self, request, format=None):
