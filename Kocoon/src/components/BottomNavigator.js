@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainDashboard from '../screens/MainDashboard';
-import ChatroomScreen from '../screens/ChatroomScreen';
+import ChatScreen from '../screens/ChatScreen';
 import DiscussionScreen from '../screens/DiscussionScreen';
 import OfficeHoursScreen from '../screens/OfficeHoursScreen';
 import TutoringScreen from '../screens/TutoringScreen';
@@ -86,7 +86,7 @@ export default function BottomNavigator() {
             />
             <Tab.Screen
                 name="chatroom"
-                component={ChatroomScreen}
+                component={ChatScreen}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.iconContainer} >

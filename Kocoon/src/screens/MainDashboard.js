@@ -36,8 +36,6 @@ export default function MainDashboard() {
         },
       ];
 
-    
-
     return(
       <View style = { styles.container } >
         <Text style={styles.paragraph}>
