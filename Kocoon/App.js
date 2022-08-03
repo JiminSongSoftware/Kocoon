@@ -9,8 +9,8 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      {/* login flow */}
       <Stack.Navigator>
+        {/* login flow */}
         <Stack.Screen 
           name='AuthFlow'
           component={AuthFlow}
@@ -18,6 +18,7 @@ function App() {
             headerShown:false
           }}
         />
+        {/* main flow */}
         <Stack.Screen
           name='MainFlow'
           component={MainFlow}
@@ -26,10 +27,6 @@ function App() {
           }}
         />
       </Stack.Navigator>
-      {/* main flow */}
-      {/* <Stack.Navigator>
-        
-      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }
