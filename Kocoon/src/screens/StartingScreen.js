@@ -1,28 +1,15 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import CustomButton from '../components/CustomButton';
 
 function StartingScreen({navigation}) {
     return (
         <View style={styles.container}>
             <Image source={require('../../assets/logo.png')} style={styles.image} />
             <Text style={styles.text}>Learn to Grow</Text>
-            <TouchableOpacity
-                onPress={()=>{navigation.navigate('Login')}}
-            >
-                <View style={styles.button}>
-                    <Text style={styles.buttonText} >Login</Text>
-                </View>
-            </TouchableOpacity>
+            <CustomButton text='Login' onPress={()=>{navigation.navigate('Login')}} />
             <Text style={{fontSize:18}}>or</Text>
-            <TouchableOpacity
-                onPress={()=>{
-                    navigation.navigate('Signup')
-                }}
-            >
-                <View style={styles.button}>
-                    <Text style={styles.buttonText} >Sign up</Text>
-                </View>
-            </TouchableOpacity>
+            <CustomButton text='Signup' onPress={()=>{navigation.navigate('Signup')}} />
         </View>
     );
 }
@@ -42,19 +29,6 @@ const styles = StyleSheet.create({
     text: {
         margin: 15,
         fontSize: 24,
-    },
-    button: {
-        margin: 15,
-        width: 219,
-        height:48,
-        backgroundColor: '#000000',
-        borderRadius: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    buttonText: {
-        fontSize:20,
-        color: 'white',
     },
 })
 
