@@ -17,13 +17,17 @@ function LoginScreen({navigation}) {
                 onChangeText={setEmail}
                 style={styles.textInput}
             />
-            <TextInput 
-                value={password}
-                placeholder='Password'
-                onChangeText={setPassword}
-                style={styles.textInput}
-            />
-            <Link text='forgot password?' onPress={()=>{navigation.navigate('ForgotPassword')}} />
+            <View>
+                <TextInput 
+                    value={password}
+                    placeholder='Password'
+                    onChangeText={setPassword}
+                    style={styles.textInput}
+                />
+                <View style={styles.linkContainer}>
+                    <Link text='forgot password?' onPress={()=>{navigation.navigate('ForgotPassword')}} />
+                </View>
+            </View>
             <CustomButton text='Login' onPress={()=>{navigation.navigate('MainFlow')}} />
             <View style={{flexDirection:'row', }}>
                 <Text>don't have an account? </Text>
@@ -57,6 +61,9 @@ const styles = StyleSheet.create({
         color: '#103025',
         borderBottomWidth: 1,
     },
+    linkContainer: {
+        alignSelf: 'flex-end',
+    }
 });
 
 export default LoginScreen;

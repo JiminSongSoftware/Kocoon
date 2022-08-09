@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 function Link({text, onPress}) {
     return (
@@ -14,6 +14,7 @@ function Link({text, onPress}) {
 const styles = StyleSheet.create({
     text: {
         fontSize:13,
+        textDecorationLine: 'underline',
     }
 });
 
