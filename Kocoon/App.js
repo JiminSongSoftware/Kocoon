@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthFlow from './src/navigations/AuthFlow';
 import MainFlow from './src/navigations/MainFlow';
 
-
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -27,6 +26,7 @@ function App() {
           }}
         />
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 }
