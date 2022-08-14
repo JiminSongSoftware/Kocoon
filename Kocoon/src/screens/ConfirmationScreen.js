@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
     },
     textInput: {
         marginBottom: 20,
-        width: 300,
+        width: "100%",
         padding: 10,
         fontSize:18,
         color: '#103025',
         borderWidth: 1,
-        borderRadius: 8,
+        borderRadius: 5,
     },
 });
 

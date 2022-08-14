@@ -5,6 +5,7 @@ import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
 import ConfirmationScreen from '../screens/ConfirmationScreen';
+import ChangePasswordScreen from '../screens/ChangePasswordScreen';
 
 function AuthFlow() {
     const Stack = createNativeStackNavigator();
@@ -35,15 +36,22 @@ function AuthFlow() {
                 }}
             />
             <Stack.Screen
-                name='ForgotPassword'
-                component={ForgotPasswordScreen}
-                // options={{
-                //     headerShown: false
-                // }}
-            />
-            <Stack.Screen
                 name='Confirmation'
                 component={ConfirmationScreen}
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Stack.Screen
+                name='ForgotPassword'
+                component={ForgotPasswordScreen}
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Stack.Screen
+                name='ChangePassword'
+                component={ChangePasswordScreen}
                 options={{
                     headerShown: false
                 }}

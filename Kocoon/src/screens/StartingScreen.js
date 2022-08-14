@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
     },
     image: {
         margin: 15,
-        width:275,
-        height: 242,
+        width:204,
+        height: 184,
     },
     text: {
         margin: 15,

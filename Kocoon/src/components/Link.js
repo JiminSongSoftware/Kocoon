@@ -1,19 +1,29 @@
 import React from "react";
-import {Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-function Link({text, onPress}) {
+function Link({ text, link, onPress }) {
     return (
-        <TouchableOpacity
-            onPress={onPress}
-        >
-            <Text style={styles.text}>{text}</Text>
-        </TouchableOpacity>
+        <View style={styles.container}>
+            <Text style={styles.textSty}>{text}</Text>
+            <TouchableOpacity
+                onPress={onPress}
+            >
+                <Text style={styles.linkSty}>{link}</Text>
+            </TouchableOpacity>
+        </View>
+
     );
 }
 
 const styles = StyleSheet.create({
-    text: {
-        fontSize:13,
+    container: {
+        flexDirection: 'row'
+    },
+    textSty: {
+        fontSize: 13,
+    },
+    linkSty: {
+        fontSize: 13,
         textDecorationLine: 'underline',
     }
 });
