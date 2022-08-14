@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize:20,
-        color: 'white',
+        color: '#C4D0CE',
     },
 });
 

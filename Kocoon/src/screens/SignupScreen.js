@@ -17,6 +17,7 @@ function SignupScreen({navigation}) {
                 value={name}
                 autoCorrect={false}
                 placeholder='Full name'
+                placeholderTextColor="#000" 
                 onChangeText={setName}
                 style={styles.textInput}
             />
@@ -25,6 +26,7 @@ function SignupScreen({navigation}) {
                 autoCapitalize='none'
                 autoCorrect={false}
                 placeholder='School email'
+                placeholderTextColor="#000" 
                 onChangeText={setEmail}
                 style={styles.textInput}
             />
@@ -32,6 +34,7 @@ function SignupScreen({navigation}) {
                 value={password}
                 secureTextEntry
                 placeholder='Password'
+                placeholderTextColor="#000" 
                 onChangeText={setPassword}
                 style={styles.textInput}
             />
@@ -39,6 +42,7 @@ function SignupScreen({navigation}) {
                 value={confirmPassword}
                 secureTextEntry
                 placeholder='Re-type Password'
+                placeholderTextColor="#000" 
                 onChangeText={setConfirmPassword}
                 style={styles.textInput}
             />

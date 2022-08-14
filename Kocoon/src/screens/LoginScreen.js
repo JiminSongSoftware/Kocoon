@@ -14,6 +14,7 @@ function LoginScreen({navigation}) {
             <TextInput 
                 value={email}
                 placeholder='Username'
+                placeholderTextColor="#000" 
                 onChangeText={setEmail}
                 style={styles.textInput}
             />
@@ -21,6 +22,7 @@ function LoginScreen({navigation}) {
                 <TextInput 
                     value={password}
                     placeholder='Password'
+                    placeholderTextColor="#000"
                     onChangeText={setPassword}
                     style={styles.textInput}
                 />

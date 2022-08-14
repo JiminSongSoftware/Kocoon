@@ -44,9 +44,9 @@ function AuthFlow() {
             <Stack.Screen
                 name='Confirmation'
                 component={ConfirmationScreen}
-                // options={{
-                //     headerShown: false
-                // }}
+                options={{
+                    headerShown: false
+                }}
             />
         </Stack.Navigator>
     );

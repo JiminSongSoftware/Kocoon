@@ -10,12 +10,11 @@ import ClassScreen from "../screens/ClassScreen";
 function LogoTitle() {
     return (
         <Image
-            style={{ width: 120, height: 30 }}
+            style={{height:40}}
             source={require('../../assets/headerLogo.png')}
         />
     );
 }
-
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();

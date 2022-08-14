@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import {View, Text, StyleSheet, Image } from 'react-native';
 import CustomButton from '../components/CustomButton';
 
 function StartingScreen({navigation}) {
@@ -9,7 +9,7 @@ function StartingScreen({navigation}) {
             <Text style={styles.text}>Learn to Grow</Text>
             <CustomButton text='Login' onPress={()=>{navigation.navigate('Login')}} />
             <Text style={{fontSize:18}}>or</Text>
-            <CustomButton text='Signup' onPress={()=>{navigation.navigate('Signup')}} />
+            <CustomButton text='Sign up' onPress={()=>{navigation.navigate('Signup')}} />
         </View>
     );
 }

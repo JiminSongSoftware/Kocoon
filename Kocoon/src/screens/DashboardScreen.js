@@ -1,38 +1,42 @@
 import React from "react";
-import {View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, ScrollView } from 'react-native';
 import Spacer from "../components/Spacer";
 
-function DashboardScreen({navigation}) {
+function DashboardScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={styles.profileContainer}>
-                <Text style={styles.categoryText}>Profile Picture</Text>
-                {/* profile image */}
-                {/* <Image /> */}
-                <View>
-                    <Text style={styles.profileText}>STUDENT NAME</Text>
-                    <Text style={styles.profileText}>STUDENT INFO</Text>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+            >
+                <View style={styles.profileContainer}>
+                    <Text style={styles.categoryText}>Profile Picture</Text>
+                    {/* profile image */}
+                    {/* <Image /> */}
+                    <View>
+                        <Text style={styles.profileText}>STUDENT NAME</Text>
+                        <Text style={styles.profileText}>STUDENT INFO</Text>
+                    </View>
                 </View>
-            </View>
-            <Spacer />
-            <Text style={styles.categoryText}>CALENDAR</Text>
-            <Spacer />
-            <Text style={styles.categoryText}>MY CLASSES</Text>
-            <Spacer />
-            <Text style={styles.categoryText}>REMINDERS</Text>
+                <Spacer />
+                <Text style={styles.categoryText}>CALENDAR</Text>
+                <Spacer />
+                <Text style={styles.categoryText}>MY CLASSES</Text>
+                <Spacer />
+                <Text style={styles.categoryText}>REMINDERS</Text>
+            </ScrollView>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        backgroundColor:'#1E1E1E',
+        flex: 1,
+        backgroundColor: '#1E1E1E',
         padding: 30,
     },
     categoryText: {
-        fontSize:20,
-        color:'#C4D0CE',
+        fontSize: 18,
+        color: '#C4D0CE',
     },
     profileContainer: {
         flexDirection: 'row',
@@ -40,8 +44,8 @@ const styles = StyleSheet.create({
         borderColor: 'white',
     },
     profileText: {
-        color:'#C4D0CE',
-        fontSize:16
+        color: '#C4D0CE',
+        fontSize: 16
     }
 });
 
