@@ -20,7 +20,7 @@ function ConfirmationScreen({navigation}) {
                 value={verifyCode}
                 onChangeText={setVerifyCode}
             />
-            <Text style={{marginBottom: 60}}>
+            <Text style={{marginBottom: 50}}>
                 if you don't receive your code in 2 minutes,
                 please check the email you have entered.
             </Text>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     img:{
         width: 204,
         height: 184,
-        marginBottom: 90,
+        marginBottom: 70,
     },
     textInput: {
         marginBottom: 20,

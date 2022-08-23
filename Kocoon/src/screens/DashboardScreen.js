@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, FlatList, ScrollView } from 'react-native';
 import Spacer from "../components/Spacer";
+import ClassCard from "../components/ClassCard";
+import CustomCalendar from "../components/CustomCalendar";
 
 function DashboardScreen({ navigation }) {
     return (
@@ -20,7 +22,13 @@ function DashboardScreen({ navigation }) {
                 <Spacer />
                 <Text style={styles.categoryText}>CALENDAR</Text>
                 <Spacer />
+                <CustomCalendar />
+                <Spacer />
                 <Text style={styles.categoryText}>MY CLASSES</Text>
+                <Spacer />
+                <View>
+                    <ClassCard className='ACCT 2301 - Introductory Financial Accounting' />
+                </View>
                 <Spacer />
                 <Text style={styles.categoryText}>REMINDERS</Text>
             </ScrollView>
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
     profileText: {
         color: '#C4D0CE',
         fontSize: 16
-    }
+    },
 });
 
 export default DashboardScreen;
