@@ -13,8 +13,7 @@ A Web/Mobile Application Software connecting connecting college students with tu
 ## Tech Stack <br>
 ### Front End
 Mobile App: React-Native<br>
-Web App: React [Not Implemented Yet]<br>
-Styling: Bootstrap 5/CSS
+Styling: Customized Stylesheet
 ### Back End
 Uses Django APIs to handle all backend requests and communication with the database.
 ### Database
@@ -22,6 +21,9 @@ Backed by a SQL relational database hosted on AWS
 ### Data Tracking
 ### Cloud Services
 Uses AWS cloud services for hosting web application/mobile application. This includes server management, deployment, static content hosting, database, etc. Will use Linux OS for deployment servers.
+
+### Open Source
+We encourage anyone who is interested in this project, please fork the repo and work on issues opened and open pull request. I will review and merge it.
 _________________
 ## Current Version: v0.0
 _________________
